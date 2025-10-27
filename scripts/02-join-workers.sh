@@ -5,7 +5,7 @@ echo "Join K3s cluster as worker node"
 echo "================================"
 
 # Ask for server URL
-read -p "Server URL [https://master-01.necroz.local:6443]: " SERVER_URL
+read -p "Server URL [https://api-necroz-core.necroz.org:6443]: " SERVER_URL
 SERVER_URL=${SERVER_URL:-https://api-necroz-core.necroz.org:6443}
 
 # Ask for token
