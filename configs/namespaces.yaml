@@ -78,3 +78,14 @@ metadata:
     purpose: networking
   annotations:
     description: "MetalLB bare-metal load balancer"
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: longhorn-system
+  labels:
+    name: longhorn-system
+    environment: infrastructure
+    purpose: storage
+  annotations:
+    description: "Longhorn storage system"
