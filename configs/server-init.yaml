@@ -1,0 +1,24 @@
+# K3s Server Init Configuration
+# Copy to /etc/rancher/k3s/config.yaml before running k3s
+cluster-init: true
+https-listen-port: 6443
+
+tls-san:
+  - master-01.necroz.org
+  - master-02.necroz.org
+  - master-03.necroz.org
+  - api-necroz-core.necroz.org
+
+cluster-cidr: 10.128.0.0/14
+service-cidr: 10.132.0.0/16
+
+flannel-backend: none
+disable-kube-proxy: true
+disable-network-policy: true
+secrets-encryption: true
+
+disable:
+  - traefik
+  - servicelb
+  - metrics-server
+  - local-storage

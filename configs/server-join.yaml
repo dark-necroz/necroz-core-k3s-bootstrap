@@ -1,0 +1,26 @@
+# K3s Server Join Configuration (Master Nodes)
+# This is a TEMPLATE - will be filled by script
+# Copy to /etc/rancher/k3s/config.yaml before running k3s
+server: REPLACE_SERVER_URL
+token: REPLACE_TOKEN
+https-listen-port: 6443
+
+tls-san:
+  - master-01.necroz.org
+  - master-02.necroz.org
+  - master-03.necroz.org
+  - api-necroz-core.necroz.org
+
+cluster-cidr: 10.128.0.0/14
+service-cidr: 10.132.0.0/16
+
+flannel-backend: none
+disable-kube-proxy: true
+disable-network-policy: true
+secrets-encryption: true
+
+disable:
+  - traefik
+  - servicelb
+  - metrics-server
+  - local-storage

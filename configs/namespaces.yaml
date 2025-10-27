@@ -1,0 +1,80 @@
+---
+# Necroz Core K3s - Namespace Definitions
+# ========================================
+# Organizational namespaces for workload isolation and RBAC
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: infra
+  labels:
+    name: infra
+    environment: infrastructure
+    purpose: core-services
+  annotations:
+    description: "Infrastructure services (ingress, DNS, storage)"
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: prod
+  labels:
+    name: prod
+    environment: production
+    purpose: workloads
+  annotations:
+    description: "Production workloads and applications"
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: dev
+  labels:
+    name: dev
+    environment: development
+    purpose: workloads
+  annotations:
+    description: "Development and testing workloads"
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: monitoring
+  labels:
+    name: monitoring
+    environment: infrastructure
+    purpose: observability
+  annotations:
+    description: "Monitoring and observability stack (Prometheus, Grafana, etc.)"
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: cert-manager
+  labels:
+    name: cert-manager
+    environment: infrastructure
+    purpose: security
+  annotations:
+    description: "Certificate management and PKI infrastructure"
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: cattle-system
+  labels:
+    name: cattle-system
+    environment: infrastructure
+    purpose: management
+  annotations:
+    description: "Rancher management plane (if deployed)"
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: metallb-system
+  labels:
+    name: metallb-system
+    environment: infrastructure
+    purpose: networking
+  annotations:
+    description: "MetalLB bare-metal load balancer"
