@@ -89,3 +89,47 @@ metadata:
     purpose: storage
   annotations:
     description: "Longhorn storage system"
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: velero
+  labels:
+    name: velero
+    environment: infrastructure
+    purpose: backup
+  annotations:
+    description: "Verlero Backup Manager"
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: argocd
+  labels:
+    name: argocd
+    environment: infrastructure
+    purpose: management
+  annotations:
+    description: "ArgoCD Kubernetes State Manager"
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: goldilocks
+  labels:
+    name: goldilocks
+    environment: infrastructure
+    purpose: management
+  annotations:
+    description: "Goldilocks resource optimizier"
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: external-dns
+  labels:
+    name: external-dns
+    environment: infrastructure
+    purpose: networking
+  annotations:
+    description: "external-dns service for custom DNS entries"
